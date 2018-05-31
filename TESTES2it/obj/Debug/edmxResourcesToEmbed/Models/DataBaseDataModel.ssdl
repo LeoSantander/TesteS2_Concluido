@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TesteS2ITModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="amigos">
+    <Key>
+      <PropertyRef Name="AmigoID" />
+    </Key>
+    <Property Name="NM_Amigo" Type="varchar" MaxLength="50" />
+    <Property Name="Telefone" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="AmigoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="jogos">
+    <Key>
+      <PropertyRef Name="JogoID" />
+    </Key>
+    <Property Name="Nome_Jogo" Type="varchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="SN_Emprestado" Type="char" MaxLength="1" />
+    <Property Name="NM_Amigo" Type="varchar" MaxLength="50" />
+    <Property Name="JogoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="50" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" />
+    <Property Name="Senha" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="TesteS2ITModelStoreContainer">
+    <EntitySet Name="amigos" EntityType="Self.amigos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="jogos" EntityType="Self.jogos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

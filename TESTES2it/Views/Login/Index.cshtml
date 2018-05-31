@@ -1,0 +1,62 @@
+﻿@model TESTEs2it.Models.login
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/content/Site.css" />
+    <link rel="stylesheet" href="~/content/bootstrap.css" />
+    <link rel="stylesheet" href="~/content/bootstrap.min.css" />
+
+</head>
+<body>
+    <div class="login-div">
+        @using (Html.BeginForm("Autorizado", "Login", FormMethod.Post))
+        {
+            <center>
+                <h1> Área Restrita</h1>
+                <table>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.Usuario)</td>
+                        <td>@Html.EditorFor(model => model.Usuario, new { htmlAttributes = new { @InputType = "text", @class = "col-25", @placeholder = "Digite seu Usuário" } })</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> @Html.ValidationMessageFor(model => model.Usuario)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.Senha)</td>
+                        <td>@Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @InputType = "password", @class = "col-25", @placeholder = "Digite sua Senha" } })</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> @Html.ValidationMessageFor(model => model.Senha)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage)</label></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="left">
+                            <a href="#">Sobre o Teste!</a>
+                            <input type="submit" name="login" value="Login" />
+                        </td>
+                    </tr>
+                </table> <br />
+                &copy; Leonardo Santander da Silva <br /> Teste para Dev .NET
+            </center>
+        }
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>

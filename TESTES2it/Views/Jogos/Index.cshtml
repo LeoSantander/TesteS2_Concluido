@@ -1,0 +1,39 @@
+﻿@model IEnumerable<TESTEs2it.Models.jogos>
+
+@{
+    ViewBag.Title = "Jogos";
+}
+
+<h2>Jogos</h2>
+
+<p>
+    @Html.ActionLink("Adicionar Novo Jogo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome_Jogo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NM_Amigo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome_Jogo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NM_Amigo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.JogoID }) |
+            @Html.ActionLink("Detalhe", "Details", new { id=item.JogoID }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.JogoID })
+        </td>
+    </tr>
+}
+
+</table>

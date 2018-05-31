@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TesteS2ITModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="amigos">
+    <Key>
+      <PropertyRef Name="AmigoID" />
+    </Key>
+    <Property Name="AmigoID" Type="Int32" Nullable="false" />
+    <Property Name="NM_Amigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="jogos">
+    <Key>
+      <PropertyRef Name="JogoID" />
+    </Key>
+    <Property Name="JogoID" Type="Int32" Nullable="false" />
+    <Property Name="Nome_Jogo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="SN_Emprestado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NM_Amigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Senha" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="TesteS2ITEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="amigos" EntityType="Self.amigos" />
+    <EntitySet Name="jogos" EntityType="Self.jogos" />
+    <EntitySet Name="login" EntityType="Self.login" />
+  </EntityContainer>
+</Schema>

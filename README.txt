@@ -1,0 +1,2 @@
+Usuário: administrador
+Senha: admin
